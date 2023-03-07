@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { createRoot } from "react-dom/client";
+import NavBar from "./navBar";
 
 function Header({ title }) {
   return <h1>{title ? title : "Default title"}</h1>;
 }
 
-export default function HomePage() {
+function Tuto() {
   const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
   const [likes, setLikes] = useState(0);
 
@@ -25,3 +27,13 @@ export default function HomePage() {
     </div>
   );
 }
+
+function HomePage() {
+  return (
+    <div>
+      <NavBar />
+    </div>
+  );
+}
+let root = createRoot(document.getElementById("app"));
+root.render(<HomePage />);
