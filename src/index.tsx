@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import NavBar from "./navBar";
+import NavBar from "./NavBar";
 
 function Header({ title }) {
   return <h1>{title ? title : "Default title"}</h1>;
@@ -35,5 +35,7 @@ function HomePage() {
     </div>
   );
 }
-let root = createRoot(document.getElementById("app"));
+const domRoot = document.getElementById("app");
+if (!domRoot) throw new Error("No root element found");
+let root = createRoot(domRoot);
 root.render(<HomePage />);

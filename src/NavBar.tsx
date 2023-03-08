@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Logo from "./components/Logo";
 
 export default function NavBar() {
   return (
     <nav>
       <div id="left">
         <div id="Menu"></div>
-        <div id="Logo"></div>
+        <Logo lang="FR" />
       </div>
       <div id="center">
         <div id="Search"></div>
